@@ -1,10 +1,10 @@
-import { Configuration, SourceMapDevToolPlugin } from "webpack";
-import { resolve } from "path";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
-import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
+const { SourceMapDevToolPlugin } = require("webpack");
+const { resolve } = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
-const config: Configuration = {
+const config = {
   entry: {
     main: resolve(__dirname, "./src/index.tsx"),
   },
@@ -58,4 +58,4 @@ const config: Configuration = {
   ],
 };
 
-export default config;
+module.exports = config;

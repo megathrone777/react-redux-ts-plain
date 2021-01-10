@@ -11,6 +11,7 @@ const Item: React.FC<TProps> = ({ id, name, description }) => {
 
   const handleInactive = (id: string | number): void => {
     dispatch(setToInactive(id));
+    // MOVED TO INACTIVE NOTIFICATION
   };
 
   const handleDelete = (id: string | number): void => {

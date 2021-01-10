@@ -9,7 +9,7 @@ const accountsReducer: React.Reducer<TAccountsState, TAction> = (
 
   const actions = {
     SET_ACCOUNT_TO_INACTIVE: () => {
-      const newActiveAccounts = [...state.activeAccounts].filter(
+      const activeAccounts = [...state.activeAccounts].filter(
         // НАЙТИ ПО ИД И УДАЛИТЬ АККАУНТ ИЗ АКТИВНЫХ
         (account) => account.id !== payload
       );
@@ -21,7 +21,7 @@ const accountsReducer: React.Reducer<TAccountsState, TAction> = (
 
       return {
         ...state,
-        activeAccounts: newActiveAccounts,
+        activeAccounts,
         inactiveAccounts: [...state.inactiveAccounts, newInactiveAccount],
       };
     },
