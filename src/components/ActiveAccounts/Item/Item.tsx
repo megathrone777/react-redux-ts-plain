@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { TAccount, setToActive, deleteActiveAccount } from "~/store/Accounts";
+import { TAccount, setToInactive, deleteActiveAccount } from "~/store/Accounts";
 import { StyledCell } from "./styled";
 
 interface TProps extends TAccount {}
@@ -9,8 +9,8 @@ interface TProps extends TAccount {}
 const Item: React.FC<TProps> = ({ id, name, description }) => {
   const dispatch = useDispatch();
 
-  const handleActive = (id: string | number): void => {
-    dispatch(setToActive(id));
+  const handleInActive = (id: string | number): void => {
+    dispatch(setToInactive(id));
   };
 
   const handleDelete = (id: string | number): void => {
@@ -23,7 +23,7 @@ const Item: React.FC<TProps> = ({ id, name, description }) => {
       <StyledCell>{name}</StyledCell>
       <StyledCell>{description}</StyledCell>
       <StyledCell>
-        <button onClick={() => handleActive(id)} type="button">
+        <button onClick={() => handleInActive(id)} type="button">
           Make inactive
         </button>
         <button onClick={() => handleDelete(id)} type="button">
