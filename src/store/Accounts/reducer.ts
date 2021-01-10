@@ -26,6 +26,23 @@ const accountsReducer: React.Reducer<TAccountsState, TAction> = (
       };
     },
 
+    SET_ACCOUNT_TO_ACTIVE: () => {
+      console.log(payload)
+      const inactiveAccounts = [...state.inactiveAccounts].filter(
+        (account) => account.id !== payload
+      );
+
+      const newActiveAccount = [...state.inactiveAccounts].find(
+        (account) => account.id === payload
+      );
+
+      return {
+        ...state,
+        inactiveAccounts,
+        activeAccounts: [...state.activeAccounts, newActiveAccount],
+      };
+    },
+
     CREATE_ACCOUNT: () => ({
       ...state,
       activeAccounts: [...state.activeAccounts, payload],
