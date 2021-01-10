@@ -1,4 +1,4 @@
-import { Configuration } from "webpack";
+import { Configuration, SourceMapDevToolPlugin } from "webpack";
 import { resolve } from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
@@ -50,6 +50,7 @@ const config: Configuration = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new SourceMapDevToolPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: resolve(__dirname, "public", "index.html"),
