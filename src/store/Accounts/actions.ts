@@ -4,7 +4,8 @@ type TActionTypes =
   | "SET_ACCOUNT_TO_INACTIVE"
   | "SET_ACCOUNT_TO_ACTIVE"
   | "CREATE_ACCOUNT"
-  | "DELETE_ACTIVE_ACCOUNT";
+  | "DELETE_ACTIVE_ACCOUNT"
+  | "DELETE_INACTIVE_ACCOUNT";
 
 export interface TAction {
   payload: any;
@@ -33,4 +34,9 @@ export const createAccount = (name: string, descr: string) => ({
 export const deleteActiveAccount = (id: string | number): TAction => ({
   payload: id,
   type: "DELETE_ACTIVE_ACCOUNT",
+});
+
+export const deleteInActiveAccount = (id: string | number): TAction => ({
+  payload: id,
+  type: "DELETE_INACTIVE_ACCOUNT",
 });

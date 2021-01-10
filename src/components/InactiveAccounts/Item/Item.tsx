@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { TAccount, setToActive, deleteActiveAccount } from "~/store/Accounts";
+import { TAccount, setToActive, deleteInActiveAccount } from "~/store/Accounts";
 import { StyledCell } from "./styled";
 
 interface TProps extends TAccount {}
@@ -14,7 +14,7 @@ const Item: React.FC<TProps> = ({ id, name, description }) => {
   };
 
   const handleDelete = (id: string | number): void => {
-    dispatch(deleteActiveAccount(id));
+    dispatch(deleteInActiveAccount(id));
   };
 
   return (

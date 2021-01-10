@@ -60,6 +60,19 @@ const accountsReducer: React.Reducer<TAccountsState, TAction> = (
       };
     },
 
+    DELETE_INACTIVE_ACCOUNT: () => {
+      const newInActiveAccounts = [...state.inactiveAccounts].filter(
+          // НАЙТИ ПО ИД И УДАЛИТЬ АККАУНТ ИЗ НЕАКТИВНЫХ
+        (account) => account.id !== payload
+      );
+
+      return {
+        ...state,
+        inactiveAccounts: newInActiveAccounts,
+      };
+    },
+
+
     DEFAULT: () => state,
   };
 
