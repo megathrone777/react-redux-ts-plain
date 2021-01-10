@@ -1,4 +1,4 @@
-# React/Redux/TypeScript plain build
+# React/TypeScript plain build
 
 ## Start
 ```
